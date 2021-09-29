@@ -71,7 +71,9 @@ navIcon1.addEventListener('click', () => {
   if (mobileNavMenuStatus === 'closed') {
     mobileNavOpen.classList.add('mobile-ease');
     mobileNavMenuStatus = 'open';
-    containerEl.style.height = '100vh';
+    setTimeout(() => {
+      containerEl.style.height = '100vh';
+    }, 300);
   } else {
     mobileNavOpen.classList.remove('mobile-ease');
     mobileNavMenuStatus = 'closed';
