@@ -8,13 +8,19 @@ const sliderNextArrowEl = document.querySelector('.next-cont');
 const sliderPrevArrowEl = document.querySelector('.prev-cont');
 const navIcon1 = document.querySelector('#nav-icon1');
 const mobileNavOpen = document.querySelector('.mobile-nav-open');
+const slide1 = document.querySelector('.slider-item-1');
+const slide2 = document.querySelector('.slider-item-2');
+const slide3 = document.querySelector('.slider-item-3');
 
 //// Slider ////
 
-// Update slider arrows and indicators after every slide change
-$('.slider').on('afterChange', function (event, slick, currentSlide) {
-  sliderControls(currentSlide);
-});
+// Update slider arrows and indicators before every slide change
+$('.slider').on(
+  'beforeChange',
+  function (event, slick, currentSlide, nextSlide) {
+    sliderControls(currentSlide, nextSlide);
+  }
+);
 
 // Slider Indicator 1 starts with full opacity
 sliderIndicator1El.style.opacity = '1';
@@ -24,18 +30,8 @@ sliderPrevArrowEl.style.pointerEvents = 'none';
 sliderPrevArrowEl.style.opacity = '.35';
 
 // Slider Arrows and Indicators - Opacity and pointer-events
-const sliderControls = (currentSlide) => {
+const sliderControls = (currentSlide, nextSlide) => {
   if (currentSlide === 0) {
-    // Slider Arrows Opacity and Pointer-Events
-    sliderPrevArrowEl.style.pointerEvents = 'none';
-    sliderNextArrowEl.style.pointerEvents = 'auto';
-    sliderPrevArrowEl.style.opacity = '.35';
-    sliderNextArrowEl.style.opacity = '1';
-    // Indicator Opacities
-    sliderIndicator1El.style.opacity = '1';
-    sliderIndicator2El.style.opacity = '.35';
-    sliderIndicator3El.style.opacity = '.35';
-  } else if (currentSlide === 1) {
     // Slider Arrows Opacity and Pointer-Events
     sliderPrevArrowEl.style.pointerEvents = 'auto';
     sliderNextArrowEl.style.pointerEvents = 'auto';
@@ -45,7 +41,7 @@ const sliderControls = (currentSlide) => {
     sliderIndicator1El.style.opacity = '.35';
     sliderIndicator2El.style.opacity = '1';
     sliderIndicator3El.style.opacity = '.35';
-  } else if (currentSlide === 2) {
+  } else if (currentSlide === 1 && nextSlide === 2) {
     // Slider Arrows Opacity and Pointer-Events
     sliderPrevArrowEl.style.pointerEvents = 'auto';
     sliderNextArrowEl.style.pointerEvents = 'none';
@@ -55,6 +51,26 @@ const sliderControls = (currentSlide) => {
     sliderIndicator1El.style.opacity = '.35';
     sliderIndicator2El.style.opacity = '.35';
     sliderIndicator3El.style.opacity = '1';
+  } else if (currentSlide === 1 && nextSlide === 0) {
+    // Slider Arrows Opacity and Pointer-Events
+    sliderPrevArrowEl.style.pointerEvents = 'none';
+    sliderNextArrowEl.style.pointerEvents = 'auto';
+    sliderPrevArrowEl.style.opacity = '.35';
+    sliderNextArrowEl.style.opacity = '1';
+    // Indicator Opacities
+    sliderIndicator1El.style.opacity = '1';
+    sliderIndicator2El.style.opacity = '.35';
+    sliderIndicator3El.style.opacity = '.35';
+  } else if (currentSlide === 2) {
+    // Slider Arrows Opacity and Pointer-Events
+    sliderPrevArrowEl.style.pointerEvents = 'auto';
+    sliderNextArrowEl.style.pointerEvents = 'auto';
+    sliderPrevArrowEl.style.opacity = '1';
+    sliderNextArrowEl.style.opacity = '1';
+    // Indicator Opacities
+    sliderIndicator1El.style.opacity = '.35';
+    sliderIndicator2El.style.opacity = '1';
+    sliderIndicator3El.style.opacity = '.35';
   }
 };
 

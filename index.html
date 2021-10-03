@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <!-- Other JavaScript -->
+    <script type="text/javascript" src="/script.js" async></script>
   </head>
   <body>
-    <div class='parent-container'>
+    <div class='parent-container' style='display: none'>
       <!-- Mobile Nav Open -->
       <div class="mobile-nav-open">
         <div class="m-links-container">
@@ -149,12 +151,14 @@
           infinite: false,
           edgeFriction: 0,
           fade: true,
-          cssEase: 'linear'
+          draggable: false,
+          cssEase: 'linear',
+          // cssEase: 'ease-in-out',
+          // waitForAnimate: false,
         });
       </script>
 
-      <!-- Other JavaScript -->
-      <script type="text/javascript" src="/script.js"></script>
+      
 
   </body>
 </html>
