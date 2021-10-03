@@ -100,12 +100,13 @@ $color-5-Orange: #ee7623;
   left: 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: $color-2-turqoise;
   transition: opacity 0.3s ease-in-out;
 
   .m-links-container {
     position: relative;
-    top: 9em;
+    bottom: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,6 +117,7 @@ $color-5-Orange: #ee7623;
         margin: 1em 0;
         font-weight: normal;
         @include Montserrat-Regular-24px();
+        font-size: 48px;
       }
     }
   }
@@ -840,5 +842,41 @@ $color-5-Orange: #ee7623;
   .grid {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0;
+  }
+
+  .mobile-nav-open {
+    .m-links-container {
+      a {
+        h3 {
+          @include Montserrat-Regular-24px();
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-nav-open {
+    .m-links-container {
+      bottom: 14vh;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .header {
+    .slider {
+      .slider-item-1 {
+        .header-phrase-and-button {
+          right: -18%;
+        }
+      }
+    }
+  }
+
+  .body-header {
+    h2 {
+      font-size: 16px;
+    }
   }
 }
