@@ -9,10 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+   
   </head>
   <body>
     <div class='parent-container' style='display: none'>
@@ -139,24 +142,24 @@
         </a>
       </div>
 
-      <!-- Slider JavaScript & jQuery -->
-      
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-      <script type="text/javascript">
-        $('.slider').slick({
-          nextArrow: $('.next'),
-          prevArrow: $('.prev'),
-          speed: '1000',
-          infinite: false,
-          edgeFriction: 0,
-          fade: true,
-          draggable: false,
-          cssEase: 'linear',
-          // cssEase: 'ease-in-out',
-          // waitForAnimate: false,
-        });
-      </script>
-      <script type="text/javascript" src="/script.js" async></script>
+       <!-- Slick Slider JavaScript and jQuery -->
+    
+    <script type="text/javascript">
+      $('.slider').slick({
+        nextArrow: $('.next'),
+        prevArrow: $('.prev'),
+        speed: '1000',
+        infinite: false,
+        edgeFriction: 0,
+        fade: true,
+        draggable: false,
+        cssEase: 'linear',
+        // cssEase: 'ease-in-out',
+        // waitForAnimate: false,
+      });
+    </script>
+    <!-- Other JavaScript -->
+    <script type="text/javascript" src="/script.js"></script>
       
 
   </body>
